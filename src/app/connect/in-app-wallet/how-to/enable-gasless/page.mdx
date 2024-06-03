@@ -1,4 +1,23 @@
 import {
+import { ConnectButton } from "thirdweb/react";
+import { inAppWallet } from "thirdweb/wallets";
+
+const wallets = [
+  inAppWallet({
+    smartAccount: {
+      chain: "sepolia",
+      sponsorGas: true,
+    },
+  }),
+];
+
+export default function App() {
+  return (
+    <ThirdwebProvider>
+      <ConnectButton client={client} wallets={wallets} />
+    </ThirdwebProvider>
+  );
+}
 	OpenSourceCard,
 	DocImage,
 	ArticleIconCard,
